@@ -10,9 +10,11 @@ const cuisineMealThreeTitle = document.querySelector('#cuisineTitleThree');
 const mealTwo = document.querySelector('#mealTwo');
 const mealThree = document.querySelector('#mealThree');
 
+///////////////////////////////////////////////
 //use mountEnter and MouseLeave event Listeners
 //On mouseEnter call the addText function
 //On mouseLeave call a removeText function
+///////////////////////////////////////////////
 const addText = function(title, mealNum) {
   title.classList.remove(`imageContainer-meal${mealNum}`);
   title.classList.add('cuisine-text-appear');
@@ -22,8 +24,9 @@ const removeText = function(title, mealNum) {
   title.classList.remove('cuisine-text-appear');
 }
 
- 
-
+///////////////////////////////////////////////
+//Roll over effect for the Cuise Section Images
+///////////////////////////////////////////////
 cuisineMealOneContainer.addEventListener('mouseenter', () => {
   mealOne.classList.remove('addBlur');
   addText(cuisineMealOneTitle, 'One');
@@ -56,7 +59,9 @@ cuisineMealThreeContainer.addEventListener('mouseleave', () => {
   mealTwo.classList.remove('addBlur');
 })
 
+//////////////////////////////////////////////////////
 //Making the hamburger menu for the navBar functional
+/////////////////////////////////////////////////////
 hamburger.addEventListener('click', () => {
     console.log('click')
     title.classList.toggle('show');
@@ -64,8 +69,9 @@ hamburger.addEventListener('click', () => {
     
     // navUl.classList.toggle('navbar-fade-down');
 })
-
+///////////////////////////////////////////////
 //Making the text fadeIn on scroll
+///////////////////////////////////////////////
 const fadeText = function() {
     console.log('hello');
     var elements;
@@ -97,6 +103,59 @@ const fadeText = function() {
   };
 
  fadeText();
+
+ ///////////////////////////////////////////////
 //Make the hamburger menu slide down as animation
 //Right now the title 'Risotteria Plymouth jumps down whenever the hamburger menu is opened
 //Fix it so that the title slides down smoothly in time with the hamburger menu sliding down as well, then slides back up when the hamburger menu is closed
+///////////////////////////////////////////////
+
+
+
+
+
+//LightBox code
+const lightbox = document.createElement('div');
+lightbox.id = 'lightbox';
+document.body.appendChild(lightbox);
+
+const images = document.querySelectorAll('.meal');
+// const images = document.querySelectorAll('.meal');
+
+const mealContainerOne = document.querySelector('#imageContainer-mealOne');
+const mealContainerTwo = document.querySelector('#imageContainer-mealTwo');
+const mealContainerThree = document.querySelector('#imageContainer-mealThree');
+const cuisineSectionTitle = document.querySelector('#cuisineSectionTitle');
+
+
+    mealOne.addEventListener('click', e => { 
+        cuisineSectionTitle.classList.add('hideText');
+        lightbox.classList.add('active');            
+        const carousel = new Carousel(0);
+        lightbox.innerHTML = carousel.setHTML("imgs/pasta.jpg", "imgs/pasta2.jpg","imgs/pasta3.jpg" );
+        carousel.startSlide();    
+    })
+    mealTwo.addEventListener('click', e => {    
+        cuisineSectionTitle.classList.add('hideText');    
+        lightbox.classList.add('active');            
+        const carousel = new Carousel(0);
+        lightbox.innerHTML = carousel.setHTML("imgs/mealTwo.jpg","imgs/pizza2.jpg","imgs/pizza3.jpg" );
+        carousel.startSlide();    
+    })
+    mealThree.addEventListener('click', e => {    
+        cuisineSectionTitle.classList.add('hideText');    
+        lightbox.classList.add('active');            
+        const carousel = new Carousel(0);
+        lightbox.innerHTML = carousel.setHTML("imgs/lasagna.jpg","imgs/lasagna2.jpg", "imgs/lasagna3.jpg" );
+        carousel.startSlide();    
+    })
+
+
+
+lightbox.addEventListener('click', e => {
+    
+    if(e.target !== e.currentTarget) return
+    cuisineSectionTitle.classList.remove('hideText');
+    lightbox.classList.remove('active');
+    lightbox.innerHTML = '';
+})

@@ -74,6 +74,10 @@ p {
   font-size: 1.25em;
 }
 
+.navbar-ul li a:hover {
+  opacity: 0.8;
+}
+
 .gradient {
   width: 100%;
   height: 100%;
@@ -212,7 +216,7 @@ p {
 
 #imageContainer-mealOne::after {
   content: '';
-  background-image: url('imgs/mealOne.jpg');
+  background-image: url('imgs/pasta.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -266,7 +270,7 @@ p {
 
 #imageContainer-mealThree::after {
   content: '';
-  background-image: url('imgs/mealThree.jpg');
+  background-image: url('imgs/lasagna.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -520,6 +524,10 @@ p {
   transform: translateY(2rem);
 }
 
+.hideText {
+  opacity: 0;
+}
+
 .readmoreBtn {
   border: none;
   padding: 0.5rem;
@@ -633,6 +641,18 @@ p {
 /* Different Screen Sizes */
 /* /////////////////////// */
 
+@media (max-width: 1816px) {
+  #mealOne {
+    width: 40vw;
+  }
+  #mealTwo {
+    width: 40vw;
+  }
+  #mealThree {
+    display: none;
+  }
+}
+
 @media (max-width: 1252px) {
   /* ///////////// */
   /* Grid Section */
@@ -709,8 +729,12 @@ p {
   #mealThree {
     display: none;
   }
-  .meal {
-    width: 40%;
+  #mealOne {
+    height: 40vh;
+    width: 80vw;
+  }
+  #mealTwo {
+    display: none;
   }
 }
 
@@ -880,6 +904,16 @@ p {
   }
   .restaurant-history {
     height: 50vh;
+  }
+}
+
+@media (max-width: 904px) {
+  #mealOne {
+    height: 40vh;
+    width: 80vw;
+  }
+  #mealTwo {
+    display: none;
   }
 }
 

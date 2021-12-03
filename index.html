@@ -7,6 +7,8 @@
     <title>Restaurant Site</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="carouselStyle.css">
+    <link rel="stylesheet" href="lightboxStyle.css">
 </head>
 <body>
     
@@ -33,14 +35,14 @@
     </div>
     
     <div class="cuisine-section">
-        <h2>Our Cuisine</h2>
+        <h2 id="cuisineSectionTitle">Our Cuisine</h2>
         <div class="cuisine">
         <div id="mealOne" class="meal ">
             <div class="gradient">
                 <!-- <img class="mealImage" src="imgs/mealThree.jpg" alt=""> -->
                 <div id="imageContainer-mealOne"  >
                     <div class="newDiv">
-                        <h4 id="cuisineTitleOne" class="imageContainer-mealOne " >This Is A Plate of Fried Rice </h4>
+                        <h4 id="cuisineTitleOne" class="imageContainer-mealOne " >Our Pasta Dishes </h4>
                     </div>
                 </div>
             </div>
@@ -48,14 +50,14 @@
         <div id="mealTwo" class="meal ">
             <div class="gradient">
                 
-           <div id="imageContainer-mealTwo"> <h4 id="cuisineTitleTwo" class="imageContainer-mealTwo" >This Is A Pizza</h4></div> 
+           <div id="imageContainer-mealTwo"> <h4 id="cuisineTitleTwo" class="imageContainer-mealTwo" >Out Pizza Dishes</h4></div> 
         
         </div>
         </div>
             <div id="mealThree" class="meal">
                 <div class="gradient">
                     
-                    <div id="imageContainer-mealThree"> <h4 id="cuisineTitleThree" class="imageContainer-mealThree" >This Is A Fish </h4> </div>
+                    <div id="imageContainer-mealThree"> <h4 id="cuisineTitleThree" class="imageContainer-mealThree" >Our Lasagna Dishes </h4> </div>
                 </div>
             </div>
         </div>
@@ -180,7 +182,7 @@
             <p>Copyright William Mashhadi</p>
         </div>
     </div>
-    
+    <script src="Carousel.js"></script>
     <script src="index.js"></script>
 </body>
 </html>

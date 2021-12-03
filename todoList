@@ -1,5 +1,8 @@
 Refactor the CSS to make it clearer and easier to read DONE
-Make the website responsive ALMOST DONE (Look up what screen sizes to optimise website for i.e. what size is so small, that I shouldn't worry about it?)
-Improve the styling, make it look nice, add new fonts
-Add some interactivity, and animations
+Make the website responsive DONE
+Add some cool javascript effects to the cuisine section, i.e. roll over affect, showing the name of the hovered item, carousel gallery when an item is clicked on DONE
+Improve the styling, make it look nice, add new fonts DONE
+Improve readability of the navbar DONE
+Improve interactivity of the navbar
+Add a proper footer
 Think of new features I can add to the website
