@@ -2,19 +2,38 @@
 /* Fonts */
 /* ///// */
 @font-face {
-  font-family: 'Raleway';
-  src: url('Raleway.ttf');
+  font-family: 'BebasNeue';
+  src: url('BebasNeue-Regular.ttf');
+
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LibreBaskerville';
+  src: url('fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf');
+
   font-weight: 400;
   font-style: normal;
 }
 
+html,
 body {
   margin: 0;
   padding: 0;
 }
 
+h1,
+h2,
+h3 {
+  font-family: BebasNeue;
+}
+
+.info-title {
+  margin-top: 0;
+}
 p {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: LibreBaskerville;
+  font-weight: lighter;
 }
 /* /////// */
 /* Navbar */
@@ -47,12 +66,19 @@ p {
 
 .navbar-ul li a {
   display: inline-block;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: BebasNeue;
+  font-weight: lighter;
   text-decoration: none;
+  letter-spacing: 2px;
   color: white;
-  font-size: 1em;
+  font-size: 1.25em;
 }
 
+.gradient {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+}
 .navbar-ul li:nth-child(1) {
 }
 
@@ -89,7 +115,7 @@ p {
 
 .hero .title-section h1 {
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+
   font-size: 6rem;
 }
 
@@ -103,15 +129,11 @@ p {
 }
 
 .title {
-  /* background-color: rgba(0, 0, 0, 0.4); */
-  /* padding: 10px;
-  /* border-radius: 10px; 
-  background-color: white; */
+  letter-spacing: 10px;
 }
 
 .title h1 {
   font-size: 4rem;
-  font-family: Raleway;
 }
 
 /* Cuisine Section */
@@ -125,7 +147,7 @@ p {
 
 .cuisine-section h2 {
   font-size: 3.2rem;
-  font-family: Raleway;
+
   font-weight: lighter;
 }
 
@@ -135,22 +157,209 @@ p {
 }
 
 .meal {
-  width: 25%;
   overflow: hidden;
   margin: 2rem;
 }
 
 .mealImage {
-  height: 100%;
-  width: 100%;
   transition: all 1s;
   transform: scale(1);
+  background: black;
 }
 
 .mealImage:hover {
-  transform: scale(1.1);
+  /* transform: scale(1.1);
   /* transform: translateY(-400px); */
+  /* opacity: 0.5;
+  background-image: url();  */
 }
+
+#mealOne {
+  height: 40vh;
+  width: 25vw;
+}
+#mealTwo {
+  height: 40vh;
+  width: 25vw;
+}
+#mealThree {
+  height: 40vh;
+  width: 25vw;
+}
+
+.background {
+  height: 100%;
+  width: 100%;
+}
+
+.newDiv {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#imageContainer-mealOne {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+}
+
+#imageContainer-mealOne::after {
+  content: '';
+  background-image: url('imgs/mealOne.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 1;
+}
+
+#imageContainer-mealOne:hover::after {
+  opacity: 0.4;
+  cursor: pointer;
+}
+#imageContainer-mealTwo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+}
+
+#imageContainer-mealTwo::after {
+  content: '';
+  background-image: url('imgs/mealTwo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 1;
+}
+
+#imageContainer-mealTwo:hover::after {
+  opacity: 0.4;
+  cursor: pointer;
+}
+#imageContainer-mealThree {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+}
+
+#imageContainer-mealThree::after {
+  content: '';
+  background-image: url('imgs/mealThree.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 1;
+}
+
+#imageContainer-mealThree:hover::after {
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+#cuisineTitleOne {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  font-size: 2rem;
+  line-height: 0.9;
+  text-align: center;
+  cursor: pointer;
+}
+#cuisineTitleTwo {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  font-size: 2rem;
+  line-height: 0.9;
+  text-align: center;
+  cursor: pointer;
+}
+#cuisineTitleThree {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  font-size: 2rem;
+  line-height: 0.9;
+  text-align: center;
+  cursor: pointer;
+}
+
+.imageContainer-mealOne {
+  display: none;
+}
+.imageContainer-mealTwo {
+  display: none;
+}
+.imageContainer-mealThree {
+  display: none;
+}
+
+.cuisine-text-appear {
+  display: inline;
+  color: white;
+  font-family: BebasNeue;
+  font-size: 2rem;
+}
+
+.addBlur {
+  filter: blur(3px);
+}
+
+/* @keyframes tint {
+  from {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+      url('imgs/mealThree.jpg');
+  }
+
+  to {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url('imgs/mealThree.jpg');
+  }
+} */
+
+/* .navbar-fade-down {
+  animation: fadeDown 0.2s;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0.5rem);
+  }
+}
+
+
 
 /* Description Section */
 
@@ -164,7 +373,7 @@ p {
 .description h2 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  font-family: Raleway;
+
   font-weight: lighter;
 }
 
@@ -227,10 +436,14 @@ p {
   align-items: center;
   background-color: #ebe9e6;
   color: black;
-  font-family: sans-serif;
   height: 100vh;
+  font-size: 1.2rem;
 }
 
+.restaurant-history h3 {
+  font-size: 4rem;
+  margin-bottom: 0;
+}
 .restaurant-chef {
   grid-column: 1/2;
   grid-row: 2/3;
@@ -240,9 +453,15 @@ p {
   align-items: center;
   background-color: #ebe9e6;
   color: black;
-  font-family: sans-serif;
+  font-size: 1.2rem;
   height: 100vh;
 }
+
+.restaurant-chef h3 {
+  font-size: 4rem;
+  margin-bottom: 0;
+}
+
 .restaurant-menu {
   grid-column: 2/2;
   display: flex;
@@ -251,9 +470,15 @@ p {
   align-items: center;
   background-color: #ebe9e6;
   color: black;
-  font-family: sans-serif;
+  font-size: 1.2rem;
   height: 100vh;
 }
+
+.restaurant-menu h3 {
+  font-size: 4rem;
+  margin-bottom: 0;
+}
+
 .restaurant-info-contents {
   width: 80%;
 }
@@ -295,22 +520,39 @@ p {
   transform: translateY(2rem);
 }
 
-/* Give the button a white border with white text */
-/* On hover the background turns white, border disapears, and text turns black */
-#menu-info-readMore {
+.readmoreBtn {
   border: none;
-  padding: 1rem;
+  padding: 0.5rem;
   cursor: pointer;
+  /* background-color: transparent; */
+  color: black;
+  border: 2px solid black;
+  width: 10rem;
+  transition: 0.4s;
 }
-#chef-info-readMore {
-  border: none;
-  padding: 1rem;
-  cursor: pointer;
+
+.readmoreBtn:hover {
+  background-color: black;
+  color: white;
 }
-#history-info-readMore {
+.readmoreBtnCard {
   border: none;
-  padding: 1rem;
+  padding: 0.5rem;
   cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  width: 10rem;
+  transition: 0.4s;
+}
+
+.readmoreBtnCard:hover {
+  background-color: white;
+  color: black;
+}
+
+.card-contents {
+  margin-left: 1.5rem;
 }
 
 /* ///////////////// */
@@ -372,19 +614,11 @@ p {
   color: white;
 }
 
-.card h2 {
-  font-size: 2rem;
-}
-.card h3 {
-  font-size: 2.5rem;
-}
-
 .card h2,
-.card h3,
-.card p {
-  margin-left: 1.5rem;
+.card h3 {
   line-height: 1rem;
-  font-family: sans-serif;
+  letter-spacing: 0.4rem;
+  margin-bottom: 0;
 }
 
 .footer {
@@ -399,7 +633,91 @@ p {
 /* Different Screen Sizes */
 /* /////////////////////// */
 
-@media screen and (max-width: 767px) {
+@media (max-width: 1252px) {
+  /* ///////////// */
+  /* Grid Section */
+  /* ///////////// */
+  .restaurant-info-images {
+    display: none;
+    opacity: 0;
+  }
+  .restaurant-info-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .history-image-container {
+    height: 80vh;
+    width: 100%;
+    background-image: url('imgs/grid-food.jpg');
+
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .restaurant-history {
+    height: 25vh;
+  }
+
+  .chef-image-container {
+    height: 50vh;
+    width: 100%;
+    background-image: url('imgs/grid-chef.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .restaurant-chef {
+    height: 25vh;
+  }
+  .menu-image-container {
+    height: 50vh;
+    width: 100%;
+
+    background-image: url('imgs/grid-food.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .restaurant-menu {
+    height: 25vh;
+  }
+
+  /* ///////////// */
+  /* Card Section */
+  /* ///////////// */
+  .events-card-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .events-card-section h3 {
+  }
+}
+
+.events-card-underline {
+  width: 90%;
+  color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 1252px) {
+  .restaurant-info-section {
+    display: flex;
+    flex-direction: column;
+  }
+  #mealThree {
+    display: none;
+  }
+  .meal {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+}
+
+@media screen and (max-width: 1024px) {
   .navbar-ul {
     display: none;
     flex-direction: column;
@@ -418,72 +736,539 @@ p {
   .hamburger {
     display: block;
   }
+
+  .restaurant-chef {
+    height: 40vh;
+  }
+  .chef-image-container {
+    height: 50vh;
+  }
+  .restaurant-menu {
+    height: 40vh;
+  }
+  .menu-image-container {
+    height: 50vh;
+  }
+  .restaurant-history {
+    height: 40vh;
+  }
+  .history-image-container {
+    height: 50vh;
+  }
+
+  .restaurant-history h3 {
+    font-size: 6rem;
+  }
+  .restaurant-history p {
+    font-size: 2rem;
+  }
+  .restaurant-history button {
+    font-size: 2rem;
+    width: 20rem;
+  }
+  .restaurant-menu h3 {
+    font-size: 6rem;
+  }
+  .restaurant-menu p {
+    font-size: 2rem;
+  }
+  .restaurant-menu button {
+    font-size: 2rem;
+    width: 20rem;
+  }
+  .restaurant-chef h3 {
+    font-size: 6rem;
+  }
+  .restaurant-chef p {
+    font-size: 2rem;
+  }
+  .restaurant-chef button {
+    font-size: 2rem;
+    width: 20rem;
+  }
+
+  .card-contents h3 {
+    font-size: 2rem;
+  }
+  .card-contents h2 {
+    font-size: 3rem;
+  }
+  .card-contents p {
+    font-size: 1.5rem;
+  }
+  .card-contents button b {
+    font-size: 1.2rem;
+  }
 }
 
-@media (max-width: 1252px) {
-  /* ///////////// */
-  /* Grid Section */
-  /* ///////////// */
-  .restaurant-info-images {
+@media (max-width: 1024px) and (orientation: landscape) {
+  .events-card-one {
+    height: 90vh;
+  }
+  .events-card-two {
+    height: 90vh;
+  }
+  .events-card-three {
+    height: 90vh;
+  }
+  .events-card-four {
+    height: 90vh;
+  }
+  .events-card-five {
+    height: 90vh;
+  }
+  .events-card-six {
+    height: 90vh;
+  }
+  .restaurant-chef h3 {
+    font-size: 2.5rem;
+  }
+  .restaurant-chef p {
+    font-size: 1.2rem;
+  }
+  .restaurant-chef button {
+    font-size: 0.9rem;
+  }
+  .restaurant-menu h3 {
+    font-size: 2.5rem;
+  }
+  .restaurant-menu p {
+    font-size: 1.2rem;
+  }
+  .restaurant-menu button {
+    font-size: 0.9rem;
+  }
+  .restaurant-history h3 {
+    font-size: 2.5rem;
+  }
+  .restaurant-history p {
+    font-size: 1.2rem;
+  }
+  .restaurant-history button {
+    font-size: 0.9rem;
+  }
+  .history-image-container {
+    height: 80vh;
+    width: 100%;
+    background-image: url('imgs/grid-food.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .menu-image-container {
+    height: 80vh;
+    width: 100%;
+    background-image: url('imgs/grid-food.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .chef-image-container {
+    height: 80vh;
+    width: 100%;
+    background-image: url('imgs/grid-chef.jpg');
+    background-repeat: no-repeat;
+    background-size: fit;
+  }
+  /* .chef-image-container img {
+    transform: translateY(-400px);
+  } */
+
+  .restaurant-chef {
+    height: 50vh;
+  }
+  .restaurant-menu {
+    height: 50vh;
+  }
+  .restaurant-history {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 770px) {
+  .restaurant-history h3 {
+    font-size: 4rem;
+  }
+  .restaurant-menu h3 {
+    font-size: 4rem;
+  }
+  .restaurant-chef h3 {
+    font-size: 4rem;
+  }
+  .restaurant-chef p {
+    font-size: 2rem;
+  }
+  .navbar-ul {
     display: none;
-    opacity: 0;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-ul.show {
+    display: flex;
+    animation: fadeDown 3s;
+  }
+  .title-section.show {
+    display: flex;
+    animation: fadeDown 3s;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .restaurant-chef {
+    height: 40vh;
+  }
+  .chef-image-container {
+    height: 50vh;
+  }
+  .restaurant-menu {
+    height: 40vh;
+  }
+  .menu-image-container {
+    height: 50vh;
+  }
+  .restaurant-history {
+    height: 40vh;
+  }
+  .history-image-container {
+    height: 50vh;
+  }
+
+  .card-contents h3 {
+    font-size: 2rem;
+  }
+  .card-contents h2 {
+    font-size: 3rem;
+  }
+  .card-contents p {
+    font-size: 1.5rem;
+  }
+  .card-contents button b {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .restaurant-info-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero .title-section h1 {
+    font-size: 3rem;
+  }
+
+  .cuisine-section {
+    display: none;
+  }
+
+  .restaurant-history h3 {
+    font-size: 1.5rem;
+  }
+
+  .restaurant-history-text {
+    font-size: 0.7rem;
+  }
+  .restaurant-chef h3 {
+    font-size: 1.5rem;
+  }
+
+  .restaurant-info-text {
+    font-size: 0.7rem;
+  }
+  .restaurant-menu h3 {
+    font-size: 1.5rem;
+  }
+
+  .chef-image-container {
+    height: 40vh;
+  }
+  .menu-image-container {
+    height: 40vh;
+  }
+  .history-image-container {
+    height: 40vh;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(0.5rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .readmoreBtnCard {
+    padding: 0.2rem;
+    font-size: 1.3rem;
+  }
+
+  .card h3 {
+    font-size: 2rem;
+  }
+  .card h2 {
+    font-size: 2.5rem;
+  }
+  .card p {
+    font-size: 1.3rem;
+  }
+
+  .restaurant-chef h3 {
+    font-size: 3rem;
+  }
+  .restaurant-menu h3 {
+    font-size: 3rem;
+  }
+  .restaurant-history h3 {
+    font-size: 3rem;
+  }
+  .restaurant-chef p {
+    font-size: 1rem;
+  }
+  .restaurant-menu p {
+    font-size: 1rem;
+  }
+  .restaurant-history p {
+    font-size: 1rem;
+  }
+  .restaurant-chef button {
+    font-size: 1rem;
+  }
+  .restaurant-menu button {
+    font-size: 1rem;
+  }
+  .restaurant-history button {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 414px) {
+  .restaurant-chef button {
+    width: 10rem;
   }
   .restaurant-info-section {
     display: flex;
     flex-direction: column;
   }
-
-  .history-image-container {
-    height: 50vh;
-    width: 100%;
-    background-image: url('imgs/grid-food.jpg');
-
-    background-repeat: no-repeat;
-    background-size: cover;
+  .hero .title-section h1 {
+    font-size: 3rem;
   }
 
-  .restaurant-history {
-    height: 25vh;
+  .cuisine-section {
+    display: none;
+  }
+
+  .restaurant-history h3 {
+    font-size: 1.5rem;
+  }
+
+  .restaurant-history-text {
+    font-size: 0.7rem;
+  }
+  .restaurant-chef h3 {
+    font-size: 1.5rem;
+  }
+
+  .restaurant-info-text {
+    font-size: 0.7rem;
+  }
+  .restaurant-menu h3 {
+    font-size: 1.5rem;
   }
 
   .chef-image-container {
-    height: 50vh;
-    width: 100%;
-    background-image: url('imgs/grid-food.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  .restaurant-chef {
-    height: 25vh;
+    height: 40vh;
   }
   .menu-image-container {
-    height: 50vh;
-    width: 100%;
-    background-image: url('imgs/grid-chef.jpg');
-
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 40vh;
+  }
+  .history-image-container {
+    height: 40vh;
   }
 
-  .restaurant-menu {
-    height: 25vh;
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(0.5rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
-  /* ///////////// */
-  /* Card Section */
-  /* ///////////// */
-  .events-card-section {
+  .readmoreBtnCard {
+    padding: 0.2rem;
+    font-size: 0.9rem;
+  }
+
+  .card h3 {
+    font-size: 0.9rem;
+  }
+  .card h2 {
+    font-size: 1rem;
+  }
+  .card p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .restaurant-chef button {
+    width: 10rem;
+  }
+  .restaurant-info-section {
     display: flex;
     flex-direction: column;
   }
-}
+  .hero .title-section h1 {
+    font-size: 4rem;
+  }
 
-@media (max-width: 1252px) {
-  #mealThree {
+  .cuisine-section {
     display: none;
   }
-  .meal {
-    width: 40%;
+
+  .restaurant-history h3 {
+    font-size: 1.5rem;
+  }
+
+  .restaurant-history-text {
+    font-size: 0.7rem;
+  }
+  .restaurant-chef h3 {
+    font-size: 1.5rem;
+  }
+
+  .restaurant-info-text {
+    font-size: 0.7rem;
+  }
+  .restaurant-menu h3 {
+    font-size: 1.5rem;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(0.5rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .readmoreBtn {
+    padding: 0.2rem;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+  .card h2 {
+    font-size: 1.5rem;
   }
 }
+
+@media (max-width: 320px) {
+  .restaurant-chef button {
+    width: 10rem;
+  }
+  .restaurant-info-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .history-image-container {
+    height: 60vh;
+  }
+  .restaurant-history {
+    height: 40vh;
+  }
+  .menu-image-container {
+    height: 60vh;
+  }
+  .restaurant-menu {
+    height: 40vh;
+  }
+  .chef-image-container {
+    height: 60vh;
+  }
+  .restaurant-chef {
+    height: 40vh;
+  }
+}
+@media (max-width: 280px) {
+  .hero .title-section h1 {
+    font-size: 2.5rem;
+  }
+  .restaurant-info-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .history-image-container {
+    height: 40vh;
+  }
+  .restaurant-history {
+    height: 40vh;
+  }
+  .menu-image-container {
+    height: 40vh;
+  }
+  .restaurant-menu {
+    height: 40vh;
+  }
+  .chef-image-container {
+    height: 40vh;
+  }
+  .restaurant-chef {
+    height: 40vh;
+  }
+
+  .restaurant-chef h3 {
+    font-size: 2rem;
+  }
+  .restaurant-menu h3 {
+    font-size: 2rem;
+  }
+  .restaurant-history h3 {
+    font-size: 2rem;
+  }
+  .restaurant-chef p {
+    font-size: 0.8rem;
+  }
+  .restaurant-menu p {
+    font-size: 0.8rem;
+  }
+  .restaurant-history p {
+    font-size: 0.8rem;
+  }
+  .restaurant-chef button {
+    width: 10rem;
+  }
+  .restaurant-menu button {
+    width: 10rem;
+  }
+  .restaurant-history button {
+    width: 10rem;
+  }
+
+  .card-contents button b {
+    padding: 0rem;
+    font-size: 0.8rem;
+  }
+
+  .card h3 {
+    font-size: 0.7rem;
+  }
+  .card h2 {
+    font-size: 1rem;
+  }
+}
+
+/* //////////////////// */
+/* Tablet Screen Sizes */
+/* ////////////////// */
