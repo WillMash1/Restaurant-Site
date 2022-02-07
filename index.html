@@ -12,7 +12,15 @@
 </head>
 <body>
     
-    <div class="hero">
+
+    <div class="intro">
+        <h1 class="logo-header">
+            <span class="logo">Riso</span><span class="logo">tteria</span>
+        </h1>
+    </div>
+
+
+    <div class="hero" id="hero">
         <div class="navbar-section">
         
             <h1>Logo Here</h1>
@@ -21,10 +29,31 @@
             </button>
             
             <ul class="navbar-ul" id="navbar-ul">
-                <li> <a href="#"> <b> Cuisine </b>  </a></li>
-                <li> <a href="#"> <b> Info </b></a></li>
-                <li> <a href="#"> <b> Events </b></a></li>
+                <li> <div class="titleContainer">  <a href="#cuisine-section"> <b> Cuisine </b>  </a> </div></li>
+                <li> <div class="titleContainer">  <a href="#restaurant-info-section"> <b> Info </b>  </a> </div></li>
+                <li> <div class="titleContainer">  <a href="#events-card-section"> <b> Events </b>  </a> </div></li>
             </ul>
+        </div>
+
+        <div id="side-menu" class="side-nav">
+            
+           
+            <!-- <a href="#" class="btn-close" onclick="closeSlideMenu()">&times</a> -->
+            <div class="side-links">
+            <a href="#hero" > <span> Home </span> </a>
+            </div>
+           
+            <div class="side-links">
+            <a href="#restaurant-info-section" > <span>  Info  </span></a>
+            </div>
+            <div class="side-links">
+            <a href="#events-card-section" > <span>  Events  </span></a>
+            </div>
+            <div class="side-links">
+            <a href="#" onclick="closeSlideMenu()" > <span>  Close  </span></a>
+            </div>
+    
+            
         </div>
 
         <div class="title-section">
@@ -33,16 +62,23 @@
             </div>
         </div>
     </div>
+
+    <div class="break">
+        <div class="line"></div>
+    </div>
+
     
-    <div class="cuisine-section">
-        <h2 id="cuisineSectionTitle">Our Cuisine</h2>
+   
+    
+    <div class="cuisine-section" id="cuisine-section">
+        <h2 id="cuisineSectionTitle">Explore Our Cuisine</h2>
         <div class="cuisine">
         <div id="mealOne" class="meal ">
             <div class="gradient">
                 <!-- <img class="mealImage" src="imgs/mealThree.jpg" alt=""> -->
                 <div id="imageContainer-mealOne"  >
                     <div class="newDiv">
-                        <h4 id="cuisineTitleOne" class="imageContainer-mealOne " >Our Pasta Dishes </h4>
+                        <h4 id="cuisineTitleOne" class="imageContainer-mealOne " >See Our Pasta Dishes </h4>
                     </div>
                 </div>
             </div>
@@ -50,14 +86,14 @@
         <div id="mealTwo" class="meal ">
             <div class="gradient">
                 
-           <div id="imageContainer-mealTwo"> <h4 id="cuisineTitleTwo" class="imageContainer-mealTwo" >Out Pizza Dishes</h4></div> 
+           <div id="imageContainer-mealTwo"> <h4 id="cuisineTitleTwo" class="imageContainer-mealTwo" >See Our Pizza Dishes</h4></div> 
         
         </div>
         </div>
             <div id="mealThree" class="meal">
                 <div class="gradient">
                     
-                    <div id="imageContainer-mealThree"> <h4 id="cuisineTitleThree" class="imageContainer-mealThree" >Our Lasagna Dishes </h4> </div>
+                    <div id="imageContainer-mealThree"> <h4 id="cuisineTitleThree" class="imageContainer-mealThree" >See Our Lasagna Dishes </h4> </div>
                 </div>
             </div>
         </div>
@@ -66,8 +102,8 @@
 
     <!-- Have a title and paragragh here separating the sections so it isn't just a series of pictures -->
     <!-- This section can showcase my ability to edit and arrange text, so make sure it looks nice -->
-
-    <div class="restaurant-info-section">
+  
+    <div class="restaurant-info-section" id="restaurant-info-section">
         <div class="history-image-container">
             <img class="restaurant-info-images" id="history-image" src="imgs/grid-food.jpg" alt="">
         </div>
@@ -113,13 +149,13 @@
         </div>
     </div>
   
-    <div class="events-card-section">
+    <div class="events-card-section" id="events-card-section">
         <div class="events-card-one card">
             <div class="card-contents">
             <h3> SPECIAL EVENT </h3>
-            <div class="events-card-underline"> <hr> </div> 
-            <h2>New Year's Eve Party</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo similique nostrum impedit eos dolore neque a?</p>
+            <div class="events-card-underline">  </div> 
+            <h2>New Year's Party</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo similique nostrum impedit?</p>
             <button class="readmoreBtnCard"> <b>Read More </b> </button>
             </div>
         </div>
@@ -127,9 +163,9 @@
         <div class="events-card-two card">
             <div class="card-contents">
             <h3> special event </h3>
-            <div class="events-card-underline"> <hr> </div> 
-            <h2>New Year's Day Dinner </h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore unde corporis laudantium minus, tenetur ut.</p>
+            <div class="events-card-underline"> </div> 
+            <h2>New Year's Dinner </h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore unde corporis laudantium.</p>
             <button class="readmoreBtnCard"> <b>Read More </b> </button>
             </div>
         </div>
@@ -138,9 +174,9 @@
             <div class="card-info">
                 <div class="card-contents">
                 <h3> Special Event </h3>
-                <div class="events-card-underline"> <hr> </div> 
+                <div class="events-card-underline"></div> 
                 <h2>Christmas Dinner</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, aspernatur ea eos quisquam placeat voluptates.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, aspernatur ea eos.</p>
                 <button class="readmoreBtnCard"> <b>Read More </b> </button>
             </div>
             </div>
@@ -149,8 +185,8 @@
         <div class="events-card-four card">
             <div class="card-contents">
             <h3> RECIPE </h3>
-            <div class="events-card-underline"> <hr> </div> 
-            <h2>Perfect Italian Pizza</h2>
+            <div class="events-card-underline">  </div> 
+            <h2> Italian Pizza</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, hic? Id ullam autem est.</p>
             <button class="readmoreBtnCard"> <b>Read More </b> </button>
         </div>
@@ -159,9 +195,9 @@
         <div class="events-card-five card">
             <div class="card-contents">
             <h3> Documentary </h3>
-            <div class="events-card-underline"> <hr> </div> 
+            <div class="events-card-underline">  </div> 
             <h2>Our Kitchen</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores blanditiis explicabo dolorum atque sed ea!</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores blanditiis explicabo!</p>
             <button class="readmoreBtnCard"> <b>Read More </b> </button>
         </div>
         </div>
@@ -169,18 +205,72 @@
         <div class="events-card-six card">
             <div class="card-contents">
             <h3> Chef's Thoughts </h3>
-            <div class="events-card-underline"> <hr> </div> 
+            <div class="events-card-underline"></div> 
             <h2>My Pasta Sauce</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam impedit accusamus velit vel, distinctio accusantium nostrum quibusdam sequi veritatis aliquam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam impedit accusamus velit vel, </p>
             <button class="readmoreBtnCard"> <b>Read More </b>   </button>
             </div>
         </div>
     </div>   
-    
-    <div class="footer">
-        <div class="footer-section">
-            <p>Copyright William Mashhadi</p>
+   
+    <div class="footer-container">
+    <div class="footer-grid">
+        
+        <div class="about">
+            
+            <ul>
+                <h3>About</h3>
+                <li>Lorem ipsum dolor</li>
+                <li>sit amet, consectetur</li>
+                <li>adipisicing elit.</li>
+                <li>Perferendis, animi.</li>
+            </ul>
+                 <hr id="about-hr">
         </div>
+        <div class="contact">
+            <ul>
+                <h3>Contact</h3>
+                <li>Plymouth, England</li>
+                <li>info@example.com</li>
+                <li>0752100583</li>
+                <li>0752143683</li>
+            </ul>
+        </div>
+        <div class="helpAndFaqs">
+            <div class="quicklinks-contents">
+                <ul>
+                    <h3> Help and Faqs</h3>
+                    <li>Lorem ipsum dolor</li>
+                    <li>sit amet, consectetur</li>
+                    <li>adipisicing elit.</li>
+                    <li>Perferendis, animi.</li>
+                </ul>
+            </div>
+        </div>
+
+        
+           
+        <div class="quicklinks">
+            <div class="quicklinks-contents">
+                <ul>
+                    <h3> Quick Links</h3>
+                    <li>Your Account</li>
+                    <li>Menu Selection</li>
+                    <li>Food Sources</li>
+                    <li>Help</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="footer">
+        <hr id="footer-hr">
+
+        <div class="footer-section">
+            <p> &copy; 2021 William Mashhadi</p>
+        </div>
+        
     </div>
     <script src="Carousel.js"></script>
     <script src="index.js"></script>

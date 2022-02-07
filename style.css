@@ -3,7 +3,7 @@
 /* ///// */
 @font-face {
   font-family: 'BebasNeue';
-  src: url('BebasNeue-Regular.ttf');
+  src: url('fonts/BebasNeue-Regular.ttf');
 
   font-weight: 400;
   font-style: normal;
@@ -15,7 +15,12 @@
   font-weight: 400;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url('fonts/Roboto-Regular.ttf');
+}
 
+/* General Settings */
 html,
 body {
   margin: 0;
@@ -28,16 +33,55 @@ h3 {
   font-family: BebasNeue;
 }
 
-.info-title {
-  margin-top: 0;
-}
 p {
-  font-family: LibreBaskerville;
-  font-weight: lighter;
+  /* font-family: LibreBaskerville;
+  font-weight: lighter; */
+  font-family: Roboto-Regular;
 }
-/* /////// */
+
+/* Splash Screen */
+
+.intro {
+  position: fixed;
+  z-index: 30;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #161616;
+  transition: 1s;
+}
+
+.logo-header {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+.logo {
+  position: relative;
+  display: inline-block;
+  bottom: -20px;
+  opacity: 0;
+  font-size: 6rem;
+}
+
+.logo.active {
+  bottom: 0;
+  opacity: 1;
+  transition: ease-in-out 0.5s;
+}
+
+.logo.fade {
+  bottom: 150px;
+  opacity: 0;
+  transition: ease-in-out 0.5s;
+}
+
 /* Navbar */
-/* ////// */
+
 .navbar-section {
   padding-left: 10px;
   padding-right: 10px;
@@ -46,6 +90,7 @@ p {
   justify-content: space-between;
   align-items: center;
   margin: 0;
+  transition: 0.5s;
   /* background-color: rgba(0, 0, 0, 0.2); */
 }
 
@@ -62,6 +107,7 @@ p {
 .navbar-ul li {
   padding-left: 4em;
   padding-top: 15px;
+  width: fit-content;
 }
 
 .navbar-ul li a {
@@ -72,8 +118,155 @@ p {
   letter-spacing: 2px;
   color: white;
   font-size: 1.25em;
+
+  margin-top: 10px;
+  padding-top: 10px;
 }
 
+#about-hr {
+  display: none;
+}
+
+.side-links p {
+  font-size: 2rem;
+  font-family: BebasNeue;
+  padding: 0;
+}
+.side-links span {
+  font-size: 2rem;
+  font-family: BebasNeue;
+  padding: 0;
+}
+
+.side-nav {
+  font-family: BebasNeue;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.side-nav a {
+  padding: 10px 10px 10px 30px;
+  text-decoration: none;
+  font-size: 22px;
+  color: #ccc;
+  display: block;
+  transition: 0.3s;
+}
+
+.side-nav a:hover {
+  /* color: #fff; */
+}
+
+.side-nav .btn-close {
+  position: absolute;
+  top: 0;
+  right: 22px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.titleContainer {
+  width: fit-content;
+
+  /* position: relative; */
+}
+.navbar-ul li a::before {
+  content: '';
+  /* position: absolute; */
+  display: block;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  background-color: white;
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+  color: grey;
+  cursor: pointer;
+  opacity: 0.8;
+  margin-bottom: 1px;
+  /* padding-bottom: 1px; */
+}
+.navbar-ul li a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom right;
+  border: none;
+}
+.navbar-ul li a::after {
+  content: '';
+  /* position: absolute; */
+  display: block;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  color: grey;
+  cursor: pointer;
+  opacity: 0.8;
+  margin-bottom: 1px;
+  padding: 0;
+}
+.navbar-ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: top left;
+  border: none;
+}
+.side-nav a::before {
+  content: '';
+  /* position: absolute; */
+  display: block;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  background-color: white;
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+  color: grey;
+  cursor: pointer;
+  /* opacity: 0.8; */
+  margin-bottom: 1px;
+  /* padding-bottom: 1px; */
+}
+.side-nav a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom right;
+  border: none;
+}
+.side-nav a::after {
+  content: '';
+  /* position: absolute; */
+  display: block;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  /* color: grey; */
+  cursor: pointer;
+  /* opacity: 0.8; */
+  margin-bottom: 1px;
+  padding: 0;
+}
+.side-nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: top left;
+  border: none;
+}
+
+.side-links {
+  height: fit-content;
+  width: fit-content;
+}
 .navbar-ul li a:hover {
   opacity: 0.8;
 }
@@ -90,9 +283,9 @@ p {
   margin-left: 10%;
   color: white;
 }
-/* //////////////////////////// */
+
 /* Creating the Hamburger Menu */
-/* //////////////////////////// */
+
 .hamburger {
   background-color: transparent;
   border: 0;
@@ -105,9 +298,9 @@ p {
 .hamburger:focus {
   outline: none;
 }
-/* //////////// */
+
 /* Hero Section */
-/* //////////// */
+
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url('imgs/platter.jpg');
@@ -119,8 +312,75 @@ p {
 
 .hero .title-section h1 {
   color: white;
-
+  /* border-top: solid 2px white;
+  border-bottom: solid 2px white; */
   font-size: 6rem;
+  /* animation: titleAnimation 0.5s; */
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+/* 
+.hero .title-section h1::after {
+  content: '';
+  display: block;
+  width: 100%;
+  transform: scaleX(1);
+  height: 2px;
+  background-color: white;
+  transform-origin: bottom left; 
+   transition: transform 0.25s ease-out;
+  animation: titleAnimation 0.25s ease-out;
+  color: grey;
+  cursor: pointer;
+  opacity: 0.8;
+  margin-bottom: 1px;
+  padding-bottom: 1px;
+}
+
+@keyframes titleAnimation {
+  from {
+    transform: scaleX(0);
+    transform-origin: bottom left;
+  }
+
+  to {
+    transform: scaleX(1);
+    transform-origin: bottom right;
+    border: none;
+  }
+} */
+
+/* .navbar-ul li a::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  background-color: white;
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+  color: grey;
+  cursor: pointer;
+  opacity: 0.8;
+  margin-bottom: 1px;
+  padding-bottom: 1px;
+}
+.navbar-ul li a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom right;
+  border: none;
+} */
+
+@keyframes borderAnimation {
+  from {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  to {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
 }
 
 .title-section {
@@ -212,6 +472,7 @@ p {
   height: 100%;
   width: 100%;
   opacity: 1;
+  font-size: 4rem;
 }
 
 #imageContainer-mealOne::after {
@@ -290,7 +551,7 @@ p {
   position: relative;
   z-index: 1;
   color: #ffffff;
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 0.9;
   text-align: center;
   cursor: pointer;
@@ -299,7 +560,7 @@ p {
   position: relative;
   z-index: 1;
   color: #ffffff;
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 0.9;
   text-align: center;
   cursor: pointer;
@@ -308,7 +569,7 @@ p {
   position: relative;
   z-index: 1;
   color: #ffffff;
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 0.9;
   text-align: center;
   cursor: pointer;
@@ -332,7 +593,8 @@ p {
 }
 
 .addBlur {
-  filter: blur(3px);
+  transition: 0.2s;
+  filter: blur(2px);
 }
 
 /* @keyframes tint {
@@ -367,6 +629,10 @@ p {
 
 /* Description Section */
 
+.info-title {
+  margin-top: 0;
+}
+
 .description {
   display: flex;
   flex-direction: column;
@@ -390,6 +656,19 @@ p {
   line-height: 2rem;
   color: black;
 }
+/* .break {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  width: 100%;
+}
+.line {
+  height: 2px;
+  width: 60%;
+  color: black;
+  background-color: rgba(0, 0, 0, 0.6);
+} */
 
 /* ///////////// */
 /* Grid Section */
@@ -398,7 +677,6 @@ p {
   display: grid;
   grid-template-columns: repeat(2fr);
   grid-template-rows: repeat(3fr);
-  margin-top: 2rem;
 }
 
 .menu-image-container {
@@ -559,13 +837,17 @@ p {
   color: black;
 }
 
-.card-contents {
-  margin-left: 1.5rem;
-}
-
 /* ///////////////// */
 /* Grid Card Section */
 /* ///////////////// */
+.events-card-underline {
+  margin-top: 0.4rem;
+}
+.card-contents {
+  margin-left: 1.5rem;
+  margin-top: 4rem;
+}
+
 .events-card-section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -576,7 +858,7 @@ p {
 
 .events-card-one {
   height: 50vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url('imgs/cardOne.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -584,35 +866,35 @@ p {
 
 .events-card-two {
   height: 50vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url('imgs/cardTwo.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 .events-card-three {
   height: 50vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url('imgs/cardThree.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 .events-card-four {
   height: 50vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url('imgs/cardFour.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 .events-card-five {
   height: 50vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url('imgs/cardFive.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 .events-card-six {
   height: 50vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url('imgs/cardSix.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -631,10 +913,117 @@ p {
 
 .footer {
   display: block;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
   padding: 0.5rem;
   color: white;
   text-align: center;
+}
+.footer-section p {
+  font-family: Roboto-Regular;
+}
+.footer-section h3 {
+  font-family: BebasNeue;
+  font-size: 0.5rem;
+}
+
+.footer hr {
+  opacity: 0.5;
+  width: 70%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 4fr);
+  padding: 2rem;
+  padding-top: 1rem;
+  font-family: Roboto-Regular;
+  color: white;
+  background-color: transparent;
+  width: 70%;
+}
+
+.footer-grid ul {
+  list-style: none;
+  font-family: Roboto-Regular;
+  margin: 0;
+  padding-left: 0;
+}
+.footer-grid .about p {
+  font-family: Roboto-Regular;
+}
+
+.footer-grid ul li {
+  margin-bottom: 0.6rem;
+}
+.footer-grid h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  font-family: BebasNeue;
+  color: grey;
+}
+
+.quicklinks-contents {
+  display: flex;
+  justify-content: end;
+}
+.about {
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.contact {
+  grid-column-start: 2/3;
+  display: flex;
+  justify-content: center;
+}
+
+.helpAndFaqs {
+  display: flex;
+  justify-content: center;
+}
+.quicklinks {
+  grid-column-start: 3/4;
+}
+
+.events-card-underline {
+  width: 90%;
+  color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 2px;
+}
+
+/* Move this footer stuff to the bottom */
+.footer-grid .about p {
+  width: 50%;
+}
+
+.footer-grid ul li {
+  text-align: start;
+}
+
+.footer-grid .about h3 {
+  text-align: start;
+}
+.footer-grid .quicklinks h3 {
+  text-align: start;
+}
+
+.chef-image-container {
+  z-index: 10;
+}
+.restaurant-image-container {
+  z-index: 10;
+}
+.menu-image-container {
+  z-index: 10;
 }
 
 /* /////////////////////// */
@@ -653,10 +1042,14 @@ p {
   }
 }
 
+@media screen and (max-width: 1440px) {
+}
+
 @media (max-width: 1252px) {
   /* ///////////// */
   /* Grid Section */
   /* ///////////// */
+
   .restaurant-info-images {
     display: none;
     opacity: 0;
@@ -667,20 +1060,20 @@ p {
   }
 
   .history-image-container {
-    height: 80vh;
+    height: 90vh;
     width: 100%;
-    background-image: url('imgs/grid-food.jpg');
+    background-image: url('imgs/grid-history.jpg');
 
     background-repeat: no-repeat;
     background-size: cover;
   }
 
   .restaurant-history {
-    height: 25vh;
+    height: 50vh;
   }
 
   .chef-image-container {
-    height: 50vh;
+    height: 90vh;
     width: 100%;
     background-image: url('imgs/grid-chef.jpg');
     background-repeat: no-repeat;
@@ -688,10 +1081,10 @@ p {
   }
 
   .restaurant-chef {
-    height: 25vh;
+    height: 50vh;
   }
   .menu-image-container {
-    height: 50vh;
+    height: 90vh;
     width: 100%;
 
     background-image: url('imgs/grid-food.jpg');
@@ -700,7 +1093,7 @@ p {
   }
 
   .restaurant-menu {
-    height: 25vh;
+    height: 50vh;
   }
 
   /* ///////////// */
@@ -711,14 +1104,12 @@ p {
     flex-direction: column;
   }
 
+  .card {
+    height: 100vh;
+  }
+
   .events-card-section h3 {
   }
-}
-
-.events-card-underline {
-  width: 90%;
-  color: rgba(255, 255, 255, 0.3);
-  background-color: rgba(255, 255, 255, 0.3);
 }
 
 @media (max-width: 1252px) {
@@ -736,9 +1127,6 @@ p {
   #mealTwo {
     display: none;
   }
-}
-
-@media screen and (max-width: 1440px) {
 }
 
 @media screen and (max-width: 1024px) {
@@ -781,33 +1169,33 @@ p {
   }
 
   .restaurant-history h3 {
-    font-size: 6rem;
+    font-size: 5rem;
   }
   .restaurant-history p {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .restaurant-history button {
-    font-size: 2rem;
+    font-size: 1rem;
     width: 20rem;
   }
   .restaurant-menu h3 {
-    font-size: 6rem;
+    font-size: 5rem;
   }
   .restaurant-menu p {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .restaurant-menu button {
-    font-size: 2rem;
+    font-size: 1rem;
     width: 20rem;
   }
   .restaurant-chef h3 {
-    font-size: 6rem;
+    font-size: 5rem;
   }
   .restaurant-chef p {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .restaurant-chef button {
-    font-size: 2rem;
+    font-size: 1rem;
     width: 20rem;
   }
 
@@ -825,88 +1213,6 @@ p {
   }
 }
 
-@media (max-width: 1024px) and (orientation: landscape) {
-  .events-card-one {
-    height: 90vh;
-  }
-  .events-card-two {
-    height: 90vh;
-  }
-  .events-card-three {
-    height: 90vh;
-  }
-  .events-card-four {
-    height: 90vh;
-  }
-  .events-card-five {
-    height: 90vh;
-  }
-  .events-card-six {
-    height: 90vh;
-  }
-  .restaurant-chef h3 {
-    font-size: 2.5rem;
-  }
-  .restaurant-chef p {
-    font-size: 1.2rem;
-  }
-  .restaurant-chef button {
-    font-size: 0.9rem;
-  }
-  .restaurant-menu h3 {
-    font-size: 2.5rem;
-  }
-  .restaurant-menu p {
-    font-size: 1.2rem;
-  }
-  .restaurant-menu button {
-    font-size: 0.9rem;
-  }
-  .restaurant-history h3 {
-    font-size: 2.5rem;
-  }
-  .restaurant-history p {
-    font-size: 1.2rem;
-  }
-  .restaurant-history button {
-    font-size: 0.9rem;
-  }
-  .history-image-container {
-    height: 80vh;
-    width: 100%;
-    background-image: url('imgs/grid-food.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .menu-image-container {
-    height: 80vh;
-    width: 100%;
-    background-image: url('imgs/grid-food.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .chef-image-container {
-    height: 80vh;
-    width: 100%;
-    background-image: url('imgs/grid-chef.jpg');
-    background-repeat: no-repeat;
-    background-size: fit;
-  }
-  /* .chef-image-container img {
-    transform: translateY(-400px);
-  } */
-
-  .restaurant-chef {
-    height: 50vh;
-  }
-  .restaurant-menu {
-    height: 50vh;
-  }
-  .restaurant-history {
-    height: 50vh;
-  }
-}
-
 @media (max-width: 904px) {
   #mealOne {
     height: 40vh;
@@ -919,16 +1225,16 @@ p {
 
 @media (max-width: 770px) {
   .restaurant-history h3 {
-    font-size: 4rem;
+    font-size: 2.5rem;
   }
   .restaurant-menu h3 {
-    font-size: 4rem;
+    font-size: 2.5rem;
   }
   .restaurant-chef h3 {
-    font-size: 4rem;
+    font-size: 2.5rem;
   }
   .restaurant-chef p {
-    font-size: 2rem;
+    font-size: 1.2rem;
   }
   .navbar-ul {
     display: none;
@@ -953,19 +1259,19 @@ p {
     height: 40vh;
   }
   .chef-image-container {
-    height: 50vh;
+    height: 60vh;
   }
   .restaurant-menu {
     height: 40vh;
   }
   .menu-image-container {
-    height: 50vh;
+    height: 60vh;
   }
   .restaurant-history {
     height: 40vh;
   }
   .history-image-container {
-    height: 50vh;
+    height: 60vh;
   }
 
   .card-contents h3 {
@@ -980,9 +1286,135 @@ p {
   .card-contents button b {
     font-size: 1.2rem;
   }
+
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .quicklinks-contents {
+    justify-content: center;
+    text-align: center;
+  }
+  .contact {
+    justify-content: center;
+    text-align: center;
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .footer-grid .about p {
+    text-align: center;
+    width: 100%;
+  }
+
+  .footer-grid ul li {
+    text-align: center;
+  }
+
+  .footer-grid h3 {
+    text-align: center;
+  }
+  .footer-grid .about h3 {
+    text-align: center;
+  }
+
+  .footer-grid .quicklinks h3 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .logo {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Hero Section */
+  .hero {
+    background-attachment: local;
+  }
+  /* Info Section */
+  .restaurant-menu h3 {
+    font-size: 2rem;
+  }
+  .restaurant-menu p {
+    font-size: 1rem;
+  }
+  .restaurant-menu button {
+    font-size: 1rem;
+    width: 10rem;
+  }
+  .restaurant-history h3 {
+    font-size: 2rem;
+  }
+  .restaurant-history p {
+    font-size: 1rem;
+  }
+  .restaurant-history button {
+    font-size: 1rem;
+    width: 10rem;
+  }
+  .restaurant-chef h3 {
+    font-size: 2rem;
+  }
+  .restaurant-chef p {
+    font-size: 1rem;
+  }
+  .restaurant-chef button {
+    font-size: 1rem;
+    width: 10rem;
+  }
+
+  /* Events Card Section */
+  .card {
+    height: 50vh;
+  }
+  .card-contents h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+  }
+  .card-contents h2 {
+    font-size: 1.8rem;
+  }
+  .card-contents p {
+    font-size: 1.4rem;
+  }
+  .card-contents button {
+    font-size: 1.5rem;
+  }
+
+  /* Footer Section */
+
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .quicklinks-contents {
+    justify-content: center;
+    text-align: center;
+  }
+  .contact {
+    justify-content: center;
+    text-align: center;
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 @media (max-width: 540px) {
+  .logo {
+    font-size: 3rem;
+  }
   .restaurant-info-section {
     display: flex;
     flex-direction: column;
@@ -1077,8 +1509,46 @@ p {
   .restaurant-history button {
     font-size: 1rem;
   }
+  .restaurant-menu button {
+    width: 10rem;
+  }
+
+  .restaurant-history button {
+    width: 10rem;
+  }
+
+  .quicklinks-contents {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .contact {
+    justify-content: center;
+    text-align: center;
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  hr {
+    display: block;
+    width: 100px;
+  }
 }
-@media (max-width: 414px) {
+
+@media (max-width: 440px) {
+  .side-links span {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo {
+    font-size: 2rem;
+  }
   .restaurant-chef button {
     width: 10rem;
   }
@@ -1095,21 +1565,21 @@ p {
   }
 
   .restaurant-history h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .restaurant-history-text {
     font-size: 0.7rem;
   }
   .restaurant-chef h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .restaurant-info-text {
     font-size: 0.7rem;
   }
   .restaurant-menu h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .chef-image-container {
@@ -1134,19 +1604,53 @@ p {
     }
   }
 
-  .readmoreBtnCard {
-    padding: 0.2rem;
-    font-size: 0.9rem;
-  }
+  /* Events Card Section */
 
   .card h3 {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
   .card h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .card p {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
+  }
+  .card-contents button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+  }
+  .card-contents button b {
+    font-size: 1rem;
+  }
+  .restaurant-menu button {
+    width: 10rem;
+  }
+
+  .restaurant-history button {
+    width: 10rem;
+  }
+
+  .quicklinks-contents {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .contact {
+    justify-content: center;
+    text-align: center;
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  hr {
+    display: block;
+    width: 100px;
   }
 }
 
@@ -1159,16 +1663,16 @@ p {
     flex-direction: column;
   }
   .hero .title-section h1 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   .cuisine-section {
     display: none;
   }
 
-  .restaurant-history h3 {
-    font-size: 1.5rem;
-  }
+  /* .restaurant-history h3 {
+    font-size: 2rem;
+  } */
 
   .restaurant-history-text {
     font-size: 0.7rem;
@@ -1182,6 +1686,19 @@ p {
   }
   .restaurant-menu h3 {
     font-size: 1.5rem;
+  }
+
+  .restaurant-history .readmoreBtn {
+    width: 8rem;
+    font-size: 1rem;
+  }
+  .restaurant-chef .readmoreBtn {
+    width: 8rem;
+    font-size: 1rem;
+  }
+  .restaurant-menu .readmoreBtn {
+    width: 8rem;
+    font-size: 1rem;
   }
 
   @keyframes fadeIn {
@@ -1205,6 +1722,77 @@ p {
   }
   .card h2 {
     font-size: 1.5rem;
+  }
+
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-grid h3 {
+    font-size: 1rem;
+  }
+  .footer-grid ul {
+    padding-inline-start: 0;
+  }
+  .footer-grid ul li {
+    font-size: 0.7rem;
+  }
+  .footer-grid p {
+    font-size: 0.7rem;
+  }
+  .restaurant-menu button {
+    width: 10rem;
+  }
+  .restaurant-history button {
+    width: 10rem;
+  }
+  .quicklinks-contents {
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Events Card Section */
+
+  .card h2 {
+    font-size: 1.5rem;
+  }
+  .card button {
+    width: 8rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  .card-contents button b {
+    font-size: 0.8rem;
+    margin: 0;
+  }
+  .contact {
+    justify-content: center;
+    text-align: center;
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  hr {
+    display: block;
+    width: 100px;
+  }
+
+  .restaurant-chef .readmoreBtn {
+    font-size: 0.8rem;
+  }
+  .restaurant-menu .readmoreBtn {
+    font-size: 0.8rem;
+  }
+  .restaurant-history .readmoreBtn {
+    font-size: 0.8rem;
   }
 }
 
@@ -1234,72 +1822,52 @@ p {
   .restaurant-chef {
     height: 40vh;
   }
-}
-@media (max-width: 280px) {
-  .hero .title-section h1 {
-    font-size: 2.5rem;
-  }
-  .restaurant-info-section {
+
+  .footer-grid {
     display: flex;
     flex-direction: column;
   }
-  .history-image-container {
-    height: 40vh;
-  }
-  .restaurant-history {
-    height: 40vh;
-  }
-  .menu-image-container {
-    height: 40vh;
-  }
-  .restaurant-menu {
-    height: 40vh;
-  }
-  .chef-image-container {
-    height: 40vh;
-  }
-  .restaurant-chef {
-    height: 40vh;
-  }
 
-  .restaurant-chef h3 {
-    font-size: 2rem;
+  .footer-grid h3 {
+    font-size: 1rem;
   }
-  .restaurant-menu h3 {
-    font-size: 2rem;
+  .footer-grid ul {
+    padding-inline-start: 0;
+    padding-left: 0;
   }
-  .restaurant-history h3 {
-    font-size: 2rem;
+  .footer-grid ul li {
+    font-size: 0.7rem;
   }
-  .restaurant-chef p {
-    font-size: 0.8rem;
-  }
-  .restaurant-menu p {
-    font-size: 0.8rem;
-  }
-  .restaurant-history p {
-    font-size: 0.8rem;
-  }
-  .restaurant-chef button {
-    width: 10rem;
+  .footer-grid p {
+    font-size: 0.7rem;
   }
   .restaurant-menu button {
     width: 10rem;
   }
+
   .restaurant-history button {
     width: 10rem;
   }
 
-  .card-contents button b {
-    padding: 0rem;
-    font-size: 0.8rem;
+  .quicklinks-contents {
+    justify-content: center;
+    text-align: center;
   }
 
-  .card h3 {
-    font-size: 0.7rem;
+  .contact {
+    justify-content: center;
+    text-align: center;
   }
-  .card h2 {
-    font-size: 1rem;
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  hr {
+    display: block;
+    width: 100px;
   }
 }
 
